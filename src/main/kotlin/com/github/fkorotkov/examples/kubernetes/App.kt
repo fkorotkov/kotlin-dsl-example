@@ -1,12 +1,13 @@
 package com.github.fkorotkov.examples.kubernetes
 
-import com.fkorotkov.kubernetes.kafka.client.DefaultKafkaClient
+import com.fkorotkov.kubernetes.client.DefaultKafkaClient
+import com.fkorotkov.kubernetes.client.DefaultZookeeperClient
 import com.fkorotkov.kubernetes.kafka.*
 
 fun main() {
-    val client = DefaultKafkaClient().inNamespace("operator")
-    println(client.kafkaClusters().list())
-    client.kafkaClusters().create(
+    val kafkaClient = DefaultKafkaClient().inNamespace("operator")
+    println(kafkaClient.kafkaClusters().list())
+    kafkaClient.kafkaClusters().create(
         newKafkaCluster {
             metadata {
                 name = "kafka"
@@ -16,5 +17,9 @@ fun main() {
             }
         }
     )
-    println(client.kafkaClusters().list())
+    println(kafkaClient.kafkaClusters().list())
+
+
+  val zookeeperClient = DefaultZookeeperClient().inNamespace("operator")
+  println(zookeeperClient.zookeeperClusters().list())
 }

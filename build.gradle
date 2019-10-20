@@ -15,9 +15,12 @@ repositories {
 dependencies {
     implementation platform('org.jetbrains.kotlin:kotlin-bom')
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
-    implementation "com.fkorotkov:k8s-kafka-dsl:2.3"
-    implementation "com.fkorotkov:k8s-kafka-model:2.3"
-    implementation "com.fkorotkov:k8s-kafka-client:2.3"
+    implementation "com.fkorotkov:k8s-kafka-dsl:2.4"
+    implementation "com.fkorotkov:k8s-kafka-model:2.4"
+    implementation "com.fkorotkov:k8s-kafka-client:2.4"
+    implementation "com.fkorotkov:k8s-zookeeper-dsl:2.4"
+    implementation "com.fkorotkov:k8s-zookeeper-model:2.4"
+    implementation "com.fkorotkov:k8s-zookeeper-client:2.4"
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
     testImplementation 'org.jetbrains.kotlin:kotlin-test-junit'
 }
